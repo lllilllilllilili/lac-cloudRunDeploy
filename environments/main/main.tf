@@ -4,8 +4,8 @@ provider "google" {
   project = "jungang-poc"
 }
 # Deploy image to Cloud Run
-resource "google_cloud_run_service" "mywebapp" {
-  name     = "mywebapp"
+resource "google_cloud_run_service" "myphpapp" {
+  name     = "myphpapp"
   location = "asia-northeast3"
   template {
     spec {
@@ -30,12 +30,12 @@ data "google_iam_policy" "noauth" {
 }
 # Enable public access on Cloud Run service
 resource "google_cloud_run_service_iam_policy" "noauth" {
-  location    = google_cloud_run_service.mywebapp.location
-  project     = google_cloud_run_service.mywebapp.project
-  service     = google_cloud_run_service.mywebapp.name
+  location    = google_cloud_run_service.myphpapp.location
+  project     = google_cloud_run_service.myphpapp.project
+  service     = google_cloud_run_service.myphpapp.name
   policy_data = data.google_iam_policy.noauth.policy_data
 }
 # Return service URL
 output "url" {
-  value = "${google_cloud_run_service.mywebapp.status[0].url}"
+  value = "${google_cloud_run_service.myphpapp.status[0].url}"
 }

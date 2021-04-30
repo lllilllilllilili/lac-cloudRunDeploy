@@ -11,7 +11,7 @@ resource "google_cloud_run_service" "myphpapp" {
     spec {
       containers {
         image = "gcr.io/jungang-poc/hello-php2"
-         port {
+         ports {
           container_port = 80
         }
       }

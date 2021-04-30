@@ -10,8 +10,11 @@ resource "google_cloud_run_service" "myphpapp" {
   template {
     spec {
       containers {
-        image = "gcr.io/jungang-poc/hello-php"
+        image = "gcr.io/jungang-poc/hello-php2"
       }
+      port {
+          container_port = 80
+        }
     }
   }
   traffic {

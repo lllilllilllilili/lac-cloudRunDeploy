@@ -10,7 +10,7 @@ resource "google_cloud_run_service" "mywebapp" {
   template {
     spec {
       containers {
-        image = "gcr.io/jungang-poc/webapp"
+        image = "gcr.io/jungang-poc/hello-php"
       }
     }
   }

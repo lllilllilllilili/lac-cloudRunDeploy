@@ -1,7 +1,7 @@
 # Filename: main.tf
 # Configure GCP project
 provider "google" {
-  project = "jungang-poc"
+  project = "gsneotek-webinar"
 }
 # Deploy image to Cloud Run
 resource "google_cloud_run_service" "myphpapp" {
@@ -10,7 +10,7 @@ resource "google_cloud_run_service" "myphpapp" {
   template {
     spec {
       containers {
-        image = "gcr.io/jungang-poc/hello-php2"
+        image = "gcr.io/gsneotek-webinar/php-app"
          ports {
           container_port = 80
         }

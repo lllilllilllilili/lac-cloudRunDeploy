@@ -3,4 +3,4 @@ steps:
 - name: 'hashicorp/terraform'
   args: ['init']
 - name: 'hashicorp/terraform'
-  args: ['destroy','-var=jungang-poc=<Jungang-POC>,'-auto-approve']
+  args: ['destroy','-var=gsneotek-webinar=<gsneotek-webinar>,'-auto-approve']
